@@ -13,8 +13,11 @@ int main(int argc, char *argv[]) {
 	char **nombre_miembros, **paises, ver_temp_miembro[20];
 	float **donaciones_mes, total_recaudado_mes[NMESES], mayor_donacion = -99, donacion_miembro, primer_semestre = 0, segundo_semestre = 0, total_recaudado_global = 0;
 	
+	printf("===============\n");
+	printf("| BIENVENIDO |\n");
+	printf("===============\n");
 
-	printf("Cuantos miembros quiere ingresar?: ");
+	printf("\nCuantos miembros desea ingresar?: ");
 	scanf("%d", &num_miembros);
 
 	for(i = 0; i < NMESES; i++){
@@ -50,19 +53,21 @@ int main(int argc, char *argv[]) {
 	
 	//CARGA DE DATOS
 	
+	printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");
+	
 	for(i = 0; i < num_miembros; i++){
 		
-		printf("Inserte el nombre del miembro: ");
+		printf("\nInserte el nombre del miembro: ");
 		scanf("%s", nombre_miembros[i]);
 
-		printf("Inserte el nombre del pais: ");
+		printf("\nInserte el nombre del pais: ");
 		scanf("%s", paises[i]);
 
 		
 		
 		for(j = 0; j < NMESES; j++){
 			
-			printf("Inserte la donacion para el mes %d: ", j + 1);
+			printf("\nInserte la donacion para el mes %d: ", j + 1);
 			scanf("%f", &donaciones_mes[i][j]);
 			
 		}
@@ -77,6 +82,8 @@ int main(int argc, char *argv[]) {
 		}*/
 		
 	}
+	
+	printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
 	
 	//TOTAL RECAUDADO DE CADA MES
 	
@@ -94,9 +101,11 @@ int main(int argc, char *argv[]) {
 		
 	for(i = 0; i < NMESES; i++){
 		
-		printf("El total recaudado del mes %d es: %.2f\n", i + 1, total_recaudado_mes[i]);
+		printf("\nEl total recaudado del mes %d es: %.2f\n", i + 1, total_recaudado_mes[i]);
 		
 	}
+	
+	printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");
 	
 	//MAYOR DONACION DEL AÑO
 	
@@ -121,11 +130,11 @@ int main(int argc, char *argv[]) {
 	
 	//VERIFICACION DE DONACIONES
 	
-	
+	printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
 	
 	do{
 		
-		printf("Ingrese el nombre del miembro a verificar: \n");
+		printf("\nIngrese el nombre del miembro a verificar: ");
 		scanf("%s", ver_temp_miembro);
 		
 		
@@ -142,7 +151,9 @@ int main(int argc, char *argv[]) {
 		
 		if(bandera_busqueda == 0){
 			
+			printf("\nX====================================X\n");
 			printf("\nMiembro invalido. Por favor ingrese el nombre correcto\n");
+			printf("\nX====================================X\n");			
 			
 		}
 		
@@ -160,11 +171,15 @@ int main(int argc, char *argv[]) {
 
 	if(flag_donacion == 0){
 		
-		printf("El miembro no dono durante todos los meses\n");	
+		printf("\nX====================================X\n");			
+		printf("\nEl miembro no dono durante todos los meses\n");	
+		printf("\nX====================================X\n");			
 			
 	}else{
 		
-		printf("El miembro dono durante todos los meses\n");	
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");			
+		printf("\nEl miembro dono durante todos los meses\n");	
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");		
 		
 	}
 	
@@ -192,15 +207,21 @@ int main(int argc, char *argv[]) {
 	
 	if(primer_semestre == segundo_semestre){
 		
-		printf("Ambos semestres recaudaron la misma cantidad de dinero\n");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
+		printf("\nAmbos semestres recaudaron la misma cantidad de dinero\n");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
 				
 	}else if(primer_semestre < segundo_semestre){
 		
-		printf("En el primer semestre se recaudo menos dinero\n");
-		
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");		
+		printf("\nEn el primer semestre se recaudo menos dinero\n");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
+			
 	}else{
 		
-		printf("En el segundo semestre se recaudo menos dinero\n");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");	
+		printf("\nEn el segundo semestre se recaudo menos dinero\n");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");		
 		
 	}
 	
@@ -214,12 +235,16 @@ int main(int argc, char *argv[]) {
 	
 	if(total_recaudado_global * 0.15 <= total_recaudado_mes[2]){
 		
-		printf("\nEn el mes de marzo hubo al menos el 15%% de la recaudacion del anio");
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");			
+		printf("\nEn el mes de marzo hubo al menos el 15%% de la recaudacion del a%co\n", 164);
+		printf("\n[~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]\n");		
 		
 	}else{
-		
-		printf("\nEn el mes de marzo no hubo al menos el 15%% de la recaudacion del anio");
-		
+
+		printf("\nX===============================================================X\n");		
+		printf("\nEn el mes de marzo no hubo al menos el 15%% de la recaudacion del a%co\n", 164);
+		printf("\nX===============================================================X\n");
+				
 	}
 	
 	return 0;
